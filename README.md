@@ -4,7 +4,7 @@ Mapa interactivo de la población objetivo del Programa de Cáncer Cervicouterin
 inscritas en la red de atención primaria de la comuna de Pozo Almonte. La herramienta se construyó para
 decidir dónde emplazar el **PAP móvil**.
 
-**Ver el mapa:** https://USUARIO.github.io/REPOSITORIO/
+**Ver el mapa:** https://fabriciocespedes-bit.github.io/mapa-pap-pozo-almonte/
 
 **Acceso:** la página pide una clave. Solicítela al Departamento de Salud.
 
@@ -17,6 +17,10 @@ decidir dónde emplazar el **PAP móvil**.
 - **Detalle por calle y sector** que se despliega al acercar el mapa sobre una localidad.
 - Filtros por estado del PAP, establecimiento, grupo etario y disponibilidad de teléfono.
 - Ranking de localidades y sugerencia de recorrido para el móvil.
+- **Listado nominal de rescate**: al pulsar una localidad en el mapa, un sector urbano, una calle del panel
+  o el enlace «listado» del ranking, se abre el detalle de las mujeres con PAP pendiente con nombre, RUN,
+  edad, teléfono (enlace para llamar), dirección, estado y fecha del último PAP. Permite buscar, ordenar,
+  filtrar por estado o por tenencia de teléfono, descargar en CSV e imprimir.
 
 ## Fuente de los datos
 
@@ -39,7 +43,11 @@ Total: 6.215 mujeres de 25 a 64 años.
 
 ## Alcance y limitaciones
 
-- Las cifras son **agregadas**. El sitio no contiene nombres, RUN, teléfonos ni registros individuales.
+- **Contiene datos personales.** Al pulsar una localidad, un sector urbano o una calle se abre el listado
+  nominal de las mujeres con PAP pendiente: nombre, RUN, edad, teléfonos, dirección y observaciones del
+  rescate (4.281 registros). Es una herramienta de trabajo del equipo tratante, no un material de difusión;
+  su uso está sujeto a la Ley 20.584 y a la Ley 21.719 de protección de datos personales.
+- Los indicadores, el mapa de calor, el ranking y el detalle por calle son **agregados**.
 - Los puntos del mapa están en el **centro de cada localidad**, no en el domicilio de las usuarias.
   Las direcciones de origen son texto sin coordenadas; para una superficie de densidad calle a calle
   habría que geocodificarlas.
@@ -54,13 +62,17 @@ El contenido está cifrado con AES-GCM de 256 bits; la clave se deriva de la con
 (600.000 iteraciones). Sin la contraseña el archivo no contiene nada legible, tampoco desde el código fuente.
 
 Esto protege frente a la navegación casual y frente a los buscadores. **No equivale a un control de acceso
-real**: el archivo cifrado es descargable por cualquiera, y una contraseña corta o predecible puede romperse
-sin conexión. Para datos sanitarios se recomienda, además, mantener el repositorio privado.
+real**: el archivo cifrado es descargable por cualquiera que alcance la página, y una contraseña corta o
+predecible puede romperse sin conexión, con el archivo ya descargado y sin dejar rastro.
+
+Una sola clave abre el mapa y el listado nominal. No debe compartirse por canales abiertos ni anotarse junto
+al enlace. Si se filtra, hay que cambiarla y volver a publicar el archivo; la versión anterior sigue cifrada
+con la clave antigua en el historial del repositorio.
 
 ## Responsable
 
 Departamento de Salud · Ilustre Municipalidad de Pozo Almonte · Región de Tarapacá.
-La publicación de estas cifras agregadas fue autorizada por la Dirección de Salud comunal.
+Uso interno del Programa de Cáncer Cervicouterino.
 
 ## Técnico
 
